@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Semantic Find</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 8px;
+        width: 280px;
+      }
+      #query {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      #top-row {
+        margin-top: 6px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 12px;
+      }
+      #modeSelect {
+        flex: 1;
+      }
+      #resultControls {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      #results {
+        margin-top: 8px;
+        max-height: 200px;
+        overflow-y: auto;
+        font-size: 12px;
+        border-top: 1px solid #ddd;
+        padding-top: 4px;
+      }
+      .result {
+        padding: 4px;
+        cursor: pointer;
+      }
+      .result.active {
+        background: #e0f0ff;
+      }
+      .result:hover {
+        background: #eee;
+      }
+      #countLabel {
+        min-width: 40px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <input id="query" type="text" placeholder="Search semantically…" />
+    <div id="top-row">
+      <select id="modeSelect">
+        <option value="all">All</option>
+        <option value="text">Text</option>
+        <option value="code">Code</option>
+        <option value="headings">Headings</option>
+      </select>
+      <label style="white-space: nowrap;">
+        <input id="semanticToggle" type="checkbox" checked />
+        Semantic
+      </label>
+      <div id="resultControls">
+        <button id="prevBtn" title="Previous (Alt+↑)">↑</button>
+        <span id="countLabel">0/0</span>
+        <button id="nextBtn" title="Next (Alt+↓)">↓</button>
+      </div>
+    </div>
+    <div id="results"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>

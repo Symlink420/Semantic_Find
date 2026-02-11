@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Semantic Find",
+  "description": "Ctrl+F with semantic/similarity search on the current page.",
+  "version": "0.1.0",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Semantic Find"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "commands": {
+    "open_semantic_find": {
+      "suggested_key": {
+        "default": "Alt+Shift+F"
+      },
+      "description": "Open Semantic Find popup"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
