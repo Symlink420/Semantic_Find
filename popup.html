@@ -28,8 +28,14 @@
         align-items: center;
         gap: 4px;
       }
+      #statusLabel {
+        margin-top: 4px;
+        font-size: 11px;
+        color: #888;
+        min-height: 14px; /* reserve space so layout doesn't jump */
+      }
       #results {
-        margin-top: 8px;
+        margin-top: 4px;
         max-height: 200px;
         overflow-y: auto;
         font-size: 12px;
@@ -39,6 +45,7 @@
       .result {
         padding: 4px;
         cursor: pointer;
+        border-radius: 3px;
       }
       .result.active {
         background: #e0f0ff;
@@ -53,7 +60,7 @@
     </style>
   </head>
   <body>
-    <input id="query" type="text" placeholder="Search semantically…" />
+    <input id="query" type="text" placeholder="Search semantically…" autocomplete="off" />
     <div id="top-row">
       <select id="modeSelect">
         <option value="all">All</option>
@@ -71,6 +78,7 @@
         <button id="nextBtn" title="Next (Alt+↓)">↓</button>
       </div>
     </div>
+    <div id="statusLabel"></div>
     <div id="results"></div>
     <script src="popup.js"></script>
   </body>

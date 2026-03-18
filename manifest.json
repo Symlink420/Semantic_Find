@@ -3,7 +3,7 @@
   "name": "Semantic Find",
   "description": "Ctrl+F with semantic/similarity search on the current page.",
   "version": "0.1.0",
-  "permissions": ["scripting", "activeTab"],
+  "permissions": ["activeTab"],
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_popup": "popup.html",
